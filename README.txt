@@ -1,4 +1,4 @@
-This is a very basic C++ program illustrating how to use a genetic algorthim to 
+This is a very basic C++ program illustrating how to use a genetic algorithm to 
 solve the Eight Queens problem.  
 
 Each state of the board is a string of digits.  Each digit is the row the queen
@@ -18,7 +18,7 @@ States are randomly created with the only assumption that one queen is in one
 column.  
 
 The fitness test is the total number of attacks a queen can make minus a perfect
-score where no qeen can attack any other queen which is a score of 28.  Note: 
+score where no queen can attack any other queen which is a score of 28.  Note: 
 we do not count double dipping.  For example: if q1 can attack q2, that counts 
 as one attack.  We do not include the fact that q2 can attack q1.
 
@@ -31,7 +31,7 @@ Using the above example of state "18514376" we have a fitness score of
 (1,1)->(7,7)
 (1,4)->(6,3)
 
-We have a collection of say 20 organisms (states of the board).  We then select
+We have a collection of, say 20, organisms (states of the board).  We then select
 the best of these organisms by selecting 10 organisms with the best fitness
 score.  We mate them by randomly mix-matching the first 4 genes of an organism
 with the last 4 genes of another organism.  
@@ -50,7 +50,7 @@ Finally, we randomly mutate one random gene in each organism.  That is, move
 one queen in each state to another random row.  For example: s3="12347432".  
 After mutating we have s3="15347432"  The "2" in position 2 is now a "5".
 
-Then we check the fitness number of each new child.  If we might a solution (a
+Then we check the fitness number of each new child.  If we find a solution (a
 score of 28) we halt the program.  Otherwise, we continue to a specified number
 of generations.
 
