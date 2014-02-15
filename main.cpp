@@ -41,22 +41,14 @@ Organism* Organism::operator=(Organism* src) {
 
 string Organism::intToString(int i) {
 	switch (i) {
-		case 1:
-			return "1";
-		case 2:
-			return "2";
-		case 3:
-			return "3";
-		case 4:
-			return "4";
-		case 5:
-			return "5";
-		case 6:
-			return "6";
-		case 7:
-			return "7";
-		case 8:
-			return "8";
+		case 1:	return "1";
+		case 2:	return "2";
+		case 3:	return "3";
+		case 4:	return "4";
+		case 5:	return "5";
+		case 6:	return "6";
+		case 7:	return "7";
+		case 8:	return "8";
 	}
 }
 
@@ -82,7 +74,7 @@ void Organism::fitnessTest() {
 	for(int i=0; i<8; i++) {
 		diagonalIndex = 0;
 		currentQueenState = state.substr(i,1);
-		//cout << "i=" << i << " state=" << state << " current=" << currentQueenState << endl;
+
 		for(index=i+1; index<8; index++) {
 			diagonalIndex = index - i;
 			nextQueenState = state.substr(index, 1);
@@ -95,17 +87,12 @@ void Organism::fitnessTest() {
 			// Count diagonal attacks.
 			currentQueenPosition = atoi(currentQueenState.c_str());
 			nextQueenPosition = atoi(nextQueenState.c_str());
-		
-			//if((fabs( nextQueenPostion - currentQueenPosition )) == diagonalIndex) {
-			//	fitnessNumber -= 1;
-			//}
 
 			if((nextQueenPosition - currentQueenPosition) == diagonalIndex) {
 				fitnessNumber -= 1;
 			} else if((currentQueenPosition - nextQueenPosition) == diagonalIndex) {
 				fitnessNumber -= 1;
 			}
-			//cout << "nextQ=" << nextQueenState << " dia=" << diagonalIndex << " fit=" << fitnessNumber << endl;
 		}
 	} 
 }
@@ -237,9 +224,8 @@ int main(int argc, char* argv[]) {
 	Population *population = new Population( maxPopulation, maxGeneration );
 	population->printPop();
 	cout << endl;
-	//population->printPop();
 	population->evolve();
-population->printPop();
+	population->printPop();
 
 	return 0;
 }
