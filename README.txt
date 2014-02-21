@@ -56,3 +56,6 @@ of generations.
 
 TODO:
 1) Separate out main.cpp into more files with a makefile.
+2) Allow a user to define a function.  Send it by a function pointer?
+3) Nicer graphic output for a solution.
+4) Allow command line parameters for maxPopulation and maxGeneration.
